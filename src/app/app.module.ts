@@ -9,7 +9,7 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/de.json');
+  return new TranslateHttpLoader(http, './assets/i18n/');
 }
 
 @NgModule({
@@ -22,9 +22,10 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'de',
       loader: {
           provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
+          useFactory: (createTranslateLoader),
           deps: [HttpClient]
       }
   })

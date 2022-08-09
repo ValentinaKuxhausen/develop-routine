@@ -1,4 +1,13 @@
-<div>
+<div style="width: 80px;">
     <h1>Wordbreak</h1>
+    <!-- funktioniert -->
     <span [innerHTML]="'names.girl' | translate"></span>
+    <!-- funktioniert NICHT -->
+    <p translate>names.girl</p>
+
+    <hr>
+
+    <span [innerHTML]="'names.girlWithout' | translate"></span>
+    <p translate>names.girlWithout</p>
+
 </div>
